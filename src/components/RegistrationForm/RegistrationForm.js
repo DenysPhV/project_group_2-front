@@ -3,8 +3,9 @@ import './RegistrationForm.scss';
 import { Formik, Form } from "formik";
 import * as yup from "yup";
 import { NavLink } from "react-router-dom";
+import ButtonRegister from "../ButtonRegister/ButtonRegister.js"
 
-
+import { ReactComponent as IconEmail } from '../../icons/email.svg (2).svg'
 export default function RegistrationForm() {
 
 
@@ -38,17 +39,19 @@ export default function RegistrationForm() {
                         <div>
 
 
-
+                            <IconEmail />
 
                             <label htmlFor={`email`} className="label" >
 
                                 <input type="email"
+
                                     email="email"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     placeholder="E-mail"
                                     value={values.email}
-                                    id="email" />
+                                    id="email"
+                                    className="input" />
 
                             </label>
 
@@ -63,6 +66,7 @@ export default function RegistrationForm() {
                                     onBlur={handleBlur}
                                     placeholder=" Пароль"
                                     value={values.password}
+                                    className="input"
                                 />
                             </label>
 
@@ -77,6 +81,7 @@ export default function RegistrationForm() {
                                     onBlur={handleBlur}
                                     value={values.confirmPassword}
                                     placeholder=" Подтвердите пароль"
+                                    className="input"
                                 />
                             </label>
 
@@ -91,10 +96,12 @@ export default function RegistrationForm() {
                                     onBlur={handleBlur}
                                     value={values.name}
                                     placeholder="Ваше имя"
+                                    className="input"
                                 />
                             </label>
                             {touched.name && errors.name && <p className="errors">{errors.name}</p>}
-                            <button onClick={handleSubmit} disabled={!isValid && !dirty} type="submit">Регистрация</button>
+
+                            <ButtonRegister className="logo_btn" onClick={handleSubmit} disabled={!isValid && !dirty} disable="sd" type="submit" text="Регистрация" />
 
                             <div className="btn-container">
                                 <NavLink to="/login" className="main_btn">

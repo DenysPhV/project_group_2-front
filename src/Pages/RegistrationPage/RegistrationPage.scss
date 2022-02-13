@@ -1,0 +1,27 @@
+.page_text{
+
+    font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 45px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+.page_container{
+
+@media screen and (min-width: 768px){
+ width: 768px;
+height: 1024px;
+background-repeat: no-repeat;
+background-image: url(../../images/Frame-tblet-reg.png);
+
+
+
+}
+}

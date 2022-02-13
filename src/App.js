@@ -1,15 +1,16 @@
 import React from 'react';
-import RegistrationForm from './components/RegistrationForm/RegistrationForm';
+
 import s from './App.module.scss';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import { ReactComponent as IconWallet } from '../src/icons/IconWallet.svg';
-
+import RegistrationPage from 'Pages/RegistrationPage/RegistrationPage';
 function App() {
   return (
     <div className={s.container}>
-      <Route path="/" component={RegistrationForm} />
-
+      <Switch>
+        <Route path="/" component={RegistrationPage} />
+      </Switch>
       <header>
         <h1 className={s.logo}>
           <IconWallet />
