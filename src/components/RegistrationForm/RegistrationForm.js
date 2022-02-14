@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { NavLink } from 'react-router-dom';
 import ButtonRegister from '../ButtonRegister/ButtonRegister.js';
 import './RegistrationForm.scss';
-import s from '../../pages/Header/Header.module.scss';
+import s from '../../Pages/Header/Header.module.scss';
 import { ReactComponent as IconWallet } from '../../icons/IconWallet.svg';
 import { ReactComponent as IconEmail } from '../../icons/IconEmail.svg';
 import { ReactComponent as IconPass } from '../../icons/IconPass.svg';
