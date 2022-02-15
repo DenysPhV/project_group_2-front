@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import styles from './App.module.scss';
 
-import RegistrationPage from '../src/Pages/RegistrationPage/RegistrationPage';
-import Header from '../src/Pages/Header/Header';
+import RegistrationPage from '../src/pages/RegistrationPage/RegistrationPage';
+import Header from '../src/pages/Header/Header';
 
 function App() {
   return (
