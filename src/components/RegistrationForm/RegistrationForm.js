@@ -13,10 +13,13 @@ import { ReactComponent as IconEmail } from '../../icons/IconEmail.svg';
 import { ReactComponent as IconPass } from '../../icons/IconPass.svg';
 import { ReactComponent as IconName } from '../../icons/IconName.svg';
 import { register } from '../../redux/auth/auth-operations.js'
+import RegistrationPrgressBar from './RegistrationProressBar.js';
+import { useState } from "react";
 export default function RegistrationForm() {
 
     const dispatch = useDispatch();
     const history = useHistory();
+    const [password, setPassword] = useState("");
     const validationsSchema = yup.object().shape({
         name: yup
             .string()
@@ -88,7 +91,7 @@ export default function RegistrationForm() {
                         </label>
 
                         {touched.email && errors.email && (
-                            <p className="errors">{errors.email}</p>
+                            <p className={styles.errors}>{errors.email}</p>
                         )}
 
                         <label htmlFor={`password`} className={styles.label}>
@@ -102,6 +105,7 @@ export default function RegistrationForm() {
                                 placeholder=" Пароль"
                                 value={values.password}
                                 className={styles.input}
+                                onInput={(e) => setPassword(e.target.value)}
                             />
                         </label>
 
@@ -112,7 +116,7 @@ export default function RegistrationForm() {
                         <label htmlFor={`confirmPassword`} className={styles.label}>
                             <IconPass />
                             <input
-                                type="confirmPassword"
+                                type="password"
                                 name="confirmPassword"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
@@ -120,8 +124,9 @@ export default function RegistrationForm() {
                                 placeholder=" Подтвердите пароль"
                                 className={styles.input}
                             />
-                        </label>
 
+                        </label>
+                        <RegistrationPrgressBar password={password} />
                         {touched.confirmPassword && errors.confirmPassword && (
                             <p className={styles.errors}>{errors.confirmPassword}</p>
                         )}
@@ -139,7 +144,7 @@ export default function RegistrationForm() {
                             />
                         </label>
                         {touched.name && errors.name && (
-                            <p className="errors">{errors.name}</p>
+                            <p className={styles.errors}>{errors.name}</p>
                         )}
                         <div className={styles.btnContainer}>
                             <ButtonRegister

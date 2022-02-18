@@ -1563,6 +1563,63 @@
     "@types/yargs" "^16.0.0"
     "chalk" "^4.0.0"
 
+"@material/animation@^13.0.0":
+  "integrity" "sha512-YR0/u4u56qXDjKYolQ7F+IvlPkaSBhMl/dZv8DK0FbD6PH4ckOPd3bEXNRndXtprsxwknQQP2pttjPImylkl0g=="
+  "resolved" "https://registry.npmjs.org/@material/animation/-/animation-13.0.0.tgz"
+  "version" "13.0.0"
+  dependencies:
+    "tslib" "^2.1.0"
+
+"@material/base@^13.0.0":
+  "integrity" "sha512-vFx0JryRfcvUNX3cZ2u32wUMvxzd+c/YW0LFOXNgqCDWlubHcMm0Y6Wz371LhfQo80/NE69u+/4Joo99yKnVeg=="
+  "resolved" "https://registry.npmjs.org/@material/base/-/base-13.0.0.tgz"
+  "version" "13.0.0"
+  dependencies:
+    "tslib" "^2.1.0"
+
+"@material/feature-targeting@^13.0.0":
+  "integrity" "sha512-QJClfeaA4EMyAxKJy9WR0Nx+/VwSZCkhGLUVBG9NhxqYGfl/LtaeaidrNm32vYEoNZAofN92VD2RwQTRwp/dMQ=="
+  "resolved" "https://registry.npmjs.org/@material/feature-targeting/-/feature-targeting-13.0.0.tgz"
+  "version" "13.0.0"
+  dependencies:
+    "tslib" "^2.1.0"
+
+"@material/linear-progress@^13.0.0":
+  "integrity" "sha512-FJpP6flSME5QRPfkB616uA5bk9aMKJBqkklrHk6dSMZaTKbiHRmc6faxMIZ4w9W49JFMXaSwzC39y96tQTiRQg=="
+  "resolved" "https://registry.npmjs.org/@material/linear-progress/-/linear-progress-13.0.0.tgz"
+  "version" "13.0.0"
+  dependencies:
+    "@material/animation" "^13.0.0"
+    "@material/base" "^13.0.0"
+    "@material/feature-targeting" "^13.0.0"
+    "@material/progress-indicator" "^13.0.0"
+    "@material/rtl" "^13.0.0"
+    "@material/theme" "^13.0.0"
+    "tslib" "^2.1.0"
+
+"@material/progress-indicator@^13.0.0":
+  "integrity" "sha512-IfhAMn03gWg/Rl0Bg26Q1g+DrMnaULllz+ZJeIY7BXZC5qFYq1fLq4+RiQmfPGlJfURUjrWNLcI1VDVyXUHHzg=="
+  "resolved" "https://registry.npmjs.org/@material/progress-indicator/-/progress-indicator-13.0.0.tgz"
+  "version" "13.0.0"
+  dependencies:
+    "tslib" "^2.1.0"
+
+"@material/rtl@^13.0.0":
+  "integrity" "sha512-nFGy3iQg7k+xLs67eb86mRFVLwa0yi7MusqRK4OM8DXcLO5yoVfUTPKpdSykcbRryp9imVHsxutox2tZawR4og=="
+  "resolved" "https://registry.npmjs.org/@material/rtl/-/rtl-13.0.0.tgz"
+  "version" "13.0.0"
+  dependencies:
+    "@material/theme" "^13.0.0"
+    "tslib" "^2.1.0"
+
+"@material/theme@^13.0.0":
+  "integrity" "sha512-KAe1s0MvvfCGAwJliDVTvgAKuD3ESwhl7F7br4Iam4IPdqME2rWl8NPhKHFfaWqTG7PyCgMMngYEYuA8cLNTsA=="
+  "resolved" "https://registry.npmjs.org/@material/theme/-/theme-13.0.0.tgz"
+  "version" "13.0.0"
+  dependencies:
+    "@material/feature-targeting" "^13.0.0"
+    "tslib" "^2.1.0"
+
 "@mui/base@5.0.0-alpha.55":
   "integrity" "sha512-caPa04xwZF5Gv7qkto32xRBwubNgkjbXQngqp8PN10DQ/XcLtoe4PqrSPjwWBH0iNUZSRDf2HPP71tIU7bdR7Q=="
   "resolved" "https://registry.npmjs.org/@mui/base/-/base-5.0.0-alpha.55.tgz"
@@ -12155,6 +12212,11 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   "version" "2.3.1"
 
+"tslib@^2.1.0":
+  "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
+  "version" "2.3.1"
+
 "tsutils@^3.17.1", "tsutils@^3.21.0":
   "integrity" "sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA=="
   "resolved" "https://registry.npmjs.org/tsutils/-/tsutils-3.21.0.tgz"
@@ -13115,3 +13177,8 @@
     "nanoclone" "^0.2.1"
     "property-expr" "^2.0.4"
     "toposort" "^2.0.2"
+
+"zxcvbn@^4.4.2":
+  "integrity" "sha1-KOwXzwl0PtyrBW3dixsGJizHPDA="
+  "resolved" "https://registry.npmjs.org/zxcvbn/-/zxcvbn-4.4.2.tgz"
+  "version" "4.4.2"
