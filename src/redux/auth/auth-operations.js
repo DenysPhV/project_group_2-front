@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import {
   registerRequest,
   registerSuccess,
@@ -46,11 +47,23 @@ const register = (credentials) => async (dispatch) => {
   try {
     const response = await fetchSignUp(credentials);
     dispatch(registerSuccess(response.data));
-  } catch ({ response }) {
-    dispatch(registerError(response.data.message));
-    // Alert(response.data.message);
+  } catch (response) {
+    toast.error(
+      response.response.status === 409 && '"Вы уже зарегистрированы"',
+      {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+
+    );
+    dispatch(registerError(response.message));
   }
-};
+}
 
 // const repeatVerify = (email) => async (dispatch) => {
 //   dispatch(repeatEmailVerifyRequest());
