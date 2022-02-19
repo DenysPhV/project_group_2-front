@@ -16,11 +16,12 @@
 }
 
 .input {
+  border: none;
+  outline-style: none;
   box-sizing: border-box;
   width: 280px;
   height: 34px;
-  padding: 0 10px 0 46px;
-  border: none;
+  padding: 0 10px 0 46px;  
   border-bottom: 1px solid #e0e0e0;
 }
 

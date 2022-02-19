@@ -1,58 +1,84 @@
 @import '../../styles/shared.scss';
 
 
- .pageText {
-  display: none;
-}
-@media screen and (min-width: 768px) {
- 
-  .PageContainer {
-    position: relative;
-    background-color: #e7eaf2;
-
-    width: 768px;
-    height: 1024px;
-    background-repeat: no-repeat;
-    background-image: url(../../images/elipse-up.png),
-      url(../../images/elipse-down.png), url(../../images/Frame-tblet-reg.png);
-
-    background-repeat: no-repeat;
-    background-position: bottom 0 left 0, top 0 right 0, top 60px left 114px;
+.pageContainer {
+  & div {
+    box-sizing: border-box;
   }
 
-  .pageText {
-    position: absolute;
-    top: 163px;
-    right: 153px;
-    font-family: Poppins;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 45px;
-    display: inline-block;
+  box-sizing: border-box;
+  display: block;
+  width: 320px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px 20px 0;
 
-    color: $black;
+  & .text {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pageContainer {
+    padding: 167px 114px 0;
+    width: 768px;
+    height: 1024px;
+    background-color: #e7eaf2;
+    background-image: url(../../images/Frame-tblet-reg.png),
+      url(../../images/Ellipse-grey.png), url(../../images/Ellipse-pink.png);
+    background-repeat: no-repeat;
+    background-position: top 60px left 114px, bottom left, top right -170px;
+
+    & .text {
+      display: block;
+      font-family: $secondaryFont;
+      font-size: 30px;
+      font-weight: $regular;
+      line-height: 45px;
+      padding-left: 300px;
+      margin-bottom: 148px;
+    }
+
+    & .loginForm {
+      width: 540px;
+      height: 468px;
+    }
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .PageContainer {
-    background-color: #e7eaf2;
+  .pageContainer {
+    position: relative;
     width: 1280px;
     height: 720px;
-  }
-  .PageContainer {
-    background-repeat: no-repeat;
+    padding: 0;
+    padding-top: 598px;
+
     background-image: url(../../images/Frame-desctop.png),
-      url(../../images/elipse-up.png), url(../../images/Rectangle.png);
+      url(../../images/Ellipse-grey.png), url(../../images/Ellipse-pink.png);
+    background-position: top 150px left 76px, bottom left, top right;
 
-    background-repeat: no-repeat;
-    background-position: top 153px left 66px, bottom 0 left 0, top 0 right 0;
-  }
+    & .text {
+      display: block;
+      padding-left: 200px;
+      margin-bottom: 0;
+    }
 
-  .pageText{
-    
-top:600px;
-right: 900px;
-    
+    & .wrap {
+      position: absolute;
+      width: 720px;
+      height: 720px;
+      padding: 45px 60px 50px 80px;
+      top: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
   }
 }
+
+
+
+
+
+

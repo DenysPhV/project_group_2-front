@@ -46,12 +46,6 @@ const RegistrationProressBar = ({ password }) => {
 
     };
 
-    const changeProgressStyle = () => ({
-
-        height: "4px",
-        marginTop: "-20px",
-
-    });
 
     const changePasswordColor = () => ({
 
@@ -64,7 +58,7 @@ const RegistrationProressBar = ({ password }) => {
 
     return (
         <>
-            <div className={styles.progress} style={changeProgressStyle()}>
+            <div className={styles.progress} >
                 <div className={styles.progressBar} style={changePasswordColor()}></div>
             </div>
             <p className={styles.textPr} style={{ color: progressColor() }}>

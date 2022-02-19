@@ -1,181 +1,44 @@
 @import '../../styles/shared.scss';
 
 
-
-
-
-.formRegister {
-  background-color: $white;
-}
-
-.logo {
-  margin-left: 16px;
-
-  font-size: 25px;
-  line-height: 1.5;
-
-  font-family: $secondaryFont;
-  font-weight: $bold;
-}
-
-.logoIogoIcon {
-  width: 40px;
-  height: 40px;
-}
-
-.logoContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 56px;
-}
-
-.label {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  margin-right: 20px;
-
-  border-bottom: 1px solid #e0e0e0;
-  color: #bdbdbd;
-  margin-bottom: 40px;
-
-  
-}
-
-.errors {
-  color: $red;
-  text-align: center;
-}
-.mainBtn {
-  border-radius: 20px;
-  width: 280px;
-  background-color: $white;
-  border: 2px solid #4a56e2;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 27px;
-  text-align: center;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #4a56e2;
-  cursor: pointer;
-&:hover{
-  background-color: $indigo-accent;
-  color: $white;
-}
-  
-}
-.btnContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.logoBtn {
-  width: 280px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  background: #24cca7;
-  border-radius: 20px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 27px;
-  text-align: center;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $white;
-  margin-bottom: 20px;
-cursor: pointer;
-
-&:hover{
-
-  background-color: #21b393;
-}
-   
-}
-
-.input {
-  border: none;
-    outline-style: none;
-    padding-left: 25px;
-    width: 250px;
-    height: 35px;
-    font-family: "Circe";
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
-    position: relative;
-
-}
 .progress{  
     width: 280px;
-    height: 4px;
-    transform: translate(0, -21px);
+    height: 4px;    
     background-color:  #E5F1EF;
-    margin-left: 20px;  
+    
       
 }
-
-@media screen and (min-width: 320px) {
-  .formRegister {
-    width: 320px;
-    padding-top: 36px;
-    padding-bottom: 36px;
-    margin: 0 auto;
-  }
-  
-.progressBar{  
- 
-    height: 4px;    
-    background-color: #4a56e2;
-    border-radius: 4px;
-
-    
+.formWrap {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  height: 568px;
+  padding: 40px 0 60px;
 }
+     
 
 
-
-}
 @media screen and (min-width: 768px) {
-  .formRegister {
-    position: absolute;
-    bottom: 50px;
-    right: 50%;
-    transform: translate(50%);
+
+    .formWrap {
     width: 540px;
-    border-radius: 50px;
-    padding-bottom: 60px;
-    padding-top: 36px;
-    margin: auto;
-   
+    height: 616px;    
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
+   .progress{
+    width: 409px;    
+  } 
     
   }
-  .progress{
-     bottom: 310px;
-  }
-  .label {
-    margin-right: 65px;
-    margin-left: 65px;
-  }
-  .input {
-    margin-left: 22px;
-  }
-  .progress{
-    width: 409px;
-    margin-left: 65px;
-  }
-}
+ 
+
 @media screen and (min-width: 1280px) {
-  .formRegister {
-    bottom: 50%;
-    right: 85px;
-    transform: translateY(50%);
-    margin: 0;
+
+.formwrap {
+    width: 550px;
+    height: 640px;
+    padding: 40px 0 60px;
+    background-color: #ffffff;
+    border-radius: 20px;
   }
 }

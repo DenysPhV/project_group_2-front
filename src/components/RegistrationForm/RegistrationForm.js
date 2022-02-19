@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { Formik, Form } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 
 import ButtonRegister from '../ButtonRegister/ButtonRegister.js';
 
 import styles from './RegistrationForm.module.scss';
 
-import { ReactComponent as IconWallet } from '../../icons/IconWallet.svg';
+// import { ReactComponent as IconWallet } from '../../icons/IconWallet.svg';
 import { ReactComponent as IconEmail } from '../../icons/IconEmail.svg';
 import { ReactComponent as IconPass } from '../../icons/IconPass.svg';
 import { ReactComponent as IconName } from '../../icons/IconName.svg';
@@ -17,7 +17,10 @@ import { ReactComponent as IconName } from '../../icons/IconName.svg';
 import { register } from '../../redux/auth/auth-operations.js';
 
 import RegistrationPrgressBar from './RegistrationProressBar.js';
+import s from '../../components/LoginForm/LoginForm.module.scss';
 
+import logoMobile from '../../icons/logo-mobile.svg';
+import logo from '../../icons/logo.svg';
 export default function RegistrationForm() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -48,107 +51,117 @@ export default function RegistrationForm() {
     history.push('/login');
   };
 
+
   return (
     <>
-      <Formik
-        initialValues={{
-          email: '',
-          password: '',
-          confirmPassword: '',
-          name: '',
-        }}
-        validateOnBlur
-        onSubmit={handleRegister}
-        validationSchema={validationsSchema}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          isValid,
-          handleSubmit,
-          dirty,
-        }) => (
-          <Form className={styles.formRegister}>
-            <div className={styles.logoContainer}>
-              <IconWallet className={styles.logoIogoIcon} />
-              <h1 className={styles.logo}>Wallet</h1>
-            </div>
+      <div className={styles.formWrap}>
+        <img src={logoMobile} alt="" className={s.logoMobile} />
+        <img src={logo} alt="" className={s.logo} />
+        <Formik
+          initialValues={{
+            email: '',
+            password: '',
+            confirmPassword: '',
+            name: '',
+          }}
+          validateOnBlur
+          onSubmit={handleRegister}
+          validationSchema={validationsSchema}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            isValid,
+            handleSubmit,
+            dirty,
+          }) => (
+            <form onSubmit={handleSubmit} className={s.form}>
 
-            <label htmlFor={`email`} className={styles.label}>
-              <IconEmail />
-              <input
-                type="email"
-                email="email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="E-mail"
-                value={values.email}
-                id="email"
-                className={styles.input}
-              />
-            </label>
 
-            {touched.email && errors.email && (
-              <p className={styles.errors}>{errors.email}</p>
-            )}
 
-            <label htmlFor={`password`} className={styles.label}>
-              <IconPass />
 
-              <input
-                type="password"
-                name="password"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder=" Пароль"
-                value={values.password}
-                className={styles.input}
-                onInput={(e) => setPassword(e.target.value)}
-              />
-            </label>
+              <div className={s.inputWrap}>
+                <label htmlFor={`email`} className={styles.label}>
+                  <IconEmail className={s.icon} />
+                  <input
+                    type="email"
+                    email="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="E-mail"
+                    value={values.email}
+                    id="email"
+                    className={s.input}
+                  />
+                </label>
 
-            {touched.password && errors.password && (
-              <p className={styles.errors}>{errors.password}</p>
-            )}
 
-            <label htmlFor={`confirmPassword`} className={styles.label}>
-              <IconPass />
-              <input
-                type="password"
-                name="confirmPassword"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.confirmPassword}
-                placeholder=" Подтвердите пароль"
-                className={styles.input}
-              />
-            </label>
-            <RegistrationPrgressBar password={password} />
-            {touched.confirmPassword && errors.confirmPassword && (
-              <p className={styles.errors}>{errors.confirmPassword}</p>
-            )}
+                {touched.email && errors.email && (
+                  <p className={s.errorMessage}>{errors.email}</p>
+                )}
+              </div>
+              <div className={s.inputWrap}>
+                <label htmlFor={`password`} className={styles.label}>
+                  <IconPass className={s.icon} />
 
-            <label htmlFor={`name`} className={styles.label}>
-              <IconName />
-              <input
-                type="name"
-                name="name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-                placeholder="Ваше имя"
-                className={styles.input}
-              />
-            </label>
-            {touched.name && errors.name && (
-              <p className={styles.errors}>{errors.name}</p>
-            )}
-            <div className={styles.btnContainer}>
+                  <input
+                    type="password"
+                    name="password"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder=" Пароль"
+                    value={values.password}
+                    className={s.input}
+                    onInput={(e) => setPassword(e.target.value)}
+                  />
+                </label>
+
+                {touched.password && errors.password && (
+                  <p className={s.errorMessage}>{errors.password}</p>
+                )}
+              </div>
+              <div className={s.inputWrap}>
+                <label htmlFor={`confirmPassword`} className={styles.label}>
+                  <IconPass className={s.icon} />
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.confirmPassword}
+                    placeholder=" Подтвердите пароль"
+                    className={s.input}
+                  />
+
+                </label>
+                <RegistrationPrgressBar password={password} />
+                {touched.confirmPassword && errors.confirmPassword && (
+                  <p className={s.errorMessage}>{errors.confirmPassword}</p>
+                )}
+              </div>
+              <div className={s.inputWrap}>
+                <label htmlFor={`name`} className={styles.label}>
+                  <IconName className={s.icon} />
+                  <input
+                    type="name"
+                    name="name"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.name}
+                    placeholder="Ваше имя"
+                    className={s.input}
+                  />
+                </label>
+                {touched.name && errors.name && (
+                  <p className={s.errorMessage}>{errors.name}</p>
+                )}
+              </div>
+
               <ButtonRegister
-                className={styles.logoBtn}
+                className={s.button}
                 onClick={handleSubmit}
                 disabled={!isValid && !dirty}
                 disable="sd"
@@ -156,13 +169,20 @@ export default function RegistrationForm() {
                 text="Регистрация"
               />
 
-              <NavLink to="/login" className={styles.mainBtn}>
-                Вход
-              </NavLink>
-            </div>
-          </Form>
-        )}
-      </Formik>
+
+
+            </form>
+
+          )}
+        </Formik>
+
+        <div className={s.link}>
+          <NavLink to="/login" >
+            Вход
+          </NavLink>
+
+        </div>
+      </div>
     </>
   );
 }
