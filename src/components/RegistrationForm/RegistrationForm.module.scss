@@ -4,8 +4,7 @@
 .progress{  
     width: 280px;
     height: 4px;    
-    background-color:  #E5F1EF;
-    
+    background-color:  #E5F1EF;    
       
 }
 .formWrap {
@@ -13,12 +12,10 @@
   background-color: #ffffff;
   height: 568px;
   padding: 40px 0 60px;
-}
-     
+}    
 
 
 @media screen and (min-width: 768px) {
-
     .formWrap {
     width: 540px;
     height: 616px;    
@@ -27,8 +24,7 @@
   }
    .progress{
     width: 409px;    
-  } 
-    
+  }     
   }
  
 
